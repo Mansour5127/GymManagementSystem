@@ -5,16 +5,14 @@ using Microsoft.EntityFrameworkCore;
 namespace GymManagementSystem.DataAccess.Repositories
 {
 
-    public class PlanRepository(GymDbContext dbContext) : IPlanRepository
+    public class PlanRepository(GymDbContext dbContext) : Repository<Plan>(dbContext), IPlanRepository
     {
 
         public void Add(Plan plan) 
             => dbContext.Add(plan);
         
-
         public void Delete(Plan plan) 
             => dbContext.Remove(plan);
-
 
         public async Task<IEnumerable<Plan>> GetAllAsync() 
             => await dbContext.Plans.ToListAsync();

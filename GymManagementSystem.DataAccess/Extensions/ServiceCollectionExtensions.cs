@@ -19,6 +19,7 @@ namespace GymManagementSystem.DataAccess.Extensions
             });
 
             services.AddScoped<IPlanRepository, PlanRepository>();
+            services.AddScoped<IMemberRepository, MemberRepository>();
             //builder.Services.AddKeyedScoped<PlanRepository>("PlanRepo");
 
 

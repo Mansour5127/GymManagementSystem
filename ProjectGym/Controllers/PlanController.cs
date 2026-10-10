@@ -21,7 +21,7 @@ namespace GymManagementSystem.Presentation.Controllers
 
         public async Task<IActionResult> Details(int id)
         {
-            var plans = await _planRepo.GetById(id);
+            var plans = await _planRepo.GetByIdAsync(id);
 
             if (plans == null)
             {
