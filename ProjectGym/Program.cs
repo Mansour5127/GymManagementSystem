@@ -13,6 +13,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 builder.Services.AddGymDataAccess(connectionString);
+builder.Services.AddBusinessLogic();
 
 var app = builder.Build();
 

@@ -6,6 +6,7 @@ namespace GymManagementSystem.DataAccess.Enums
 {
     public enum BloodType
     {
+        Unknown = 0,
         APositive = 1,
         ANegative = 2,
         BPositive = 3,
@@ -14,5 +15,6 @@ namespace GymManagementSystem.DataAccess.Enums
         ABNegative = 6,
         OPositive = 7,
         ONegative = 8
+
     }
 }

@@ -24,9 +24,9 @@ namespace GymManagementSystem.DataAccess.Repositories
             .IgnoreQueryFilters()
             .FirstOrDefaultAsync(e => e.Id == id, ct);
 
-        public async Task<bool> ExistsAsync(int id, CancellationToken ct = default)
+        public async Task<bool> ExistsAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct = default)
             => await _dbSet
-            .AnyAsync(e => e.Id == id, ct);
+            .AnyAsync(predicate, ct);
 
         public async Task<IReadOnlyList<TEntity>> FindAsync
             (Expression<Func<TEntity, bool>> predicate, 
@@ -51,8 +51,9 @@ namespace GymManagementSystem.DataAccess.Repositories
             => _dbSet
             .Update(entity);
 
-        public Task<int> SaveChangesAsync()
+        public Task<int> SaveChangesAsync(CancellationToken ct = default)
             => _dbContext
-            .SaveChangesAsync();
+            .SaveChangesAsync(ct);
+
     }
 }

@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" />
-    <title>@ViewData["Title"] - Power Fitness</title>
+    <title>Power Fitness - @ViewData["Title"]</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     @* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> *@
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/style.css" />
 
-    @RenderSection("Custom_Style" , required: false)
+    @* @RenderSection("Scripts", required: false) *@
 </head>
 
 <body>
@@ -31,7 +31,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSectionAsync("Scripts", required: false)
 </body>
 
 </html>
